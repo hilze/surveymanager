@@ -18,7 +18,12 @@
       <dt>Hire Date</dt>
       <dd><%=item.hiredate%></dd>
       <% } %>
+      <dt>Contact Date: </dt>
+      <dd><%=item.contactdate%></dd>
+      <dt>Contact Result: </dt>
+      <dd><%=item.result%></dd>
     </dl>
+
     <div class="control">
       <h2>Update respondent</h2>
       <form method="post" action="/respondents/<%=item._id%>">
