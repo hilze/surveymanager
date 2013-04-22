@@ -8,7 +8,7 @@
     <a href="/"><h1>Survey Manager</h1></a>
     <dl>
       <dt>Name</dt>
-      <dd><%=item.rname%></dd>
+      <dd><%=item.name%></dd>
       <dt>Assigned to:</dt>
       <dd><a href="/users/<%=item.user%>"><%=item.user%></a></dd>
       <dt>Supervisor</dt>
@@ -17,11 +17,8 @@
       <dd><%=item.termdate%></dd>
       <dt>Hire Date</dt>
       <dd><%=item.hiredate%></dd>
-      <% } %>
-      <dt>Contact Date: </dt>
-      <dd><%=item.contactdate%></dd>
-      <dt>Contact Result: </dt>
-      <dd><%=item.result%></dd>
+      <dt>Contacts: </dt>
+      <dd><a href="/contacts/<%=item.contact%>"><%=item.contact%></a></dd>
     </dl>
 
     <div class="control">
@@ -30,14 +27,14 @@
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
         <label>Name: 
-          <input name="item[rname]" value="<%=item.name%>" type="text" required>
+          <input name="item[name]" value="<%=item.name%>" type="text" required>
         </label>
         <label>Assigned to: 
           <select name="item[user]" required>
             <% related_items.forEach(function(related_item) { %>
             <option value="<%=related_item._id%>"
               <% if (related_item._id === item.user) { %>selected<% } %>>
-              <%=related_item.uname%>
+              <%=related_item.name%>
             </option>
             <% }); %>
           </select>
