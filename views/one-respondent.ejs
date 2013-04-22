@@ -11,9 +11,12 @@
       <dd><%=item.rname%></dd>
       <dt>Assigned to:</dt>
       <dd><a href="/users/<%=item.user%>"><%=item.user%></a></dd>
-      <% if (item.image) { %>
-      <dt>Image URL</dt>
-      <dd><img src="<%=item.image%>" alt="<%=item.name%>"></dd>
+      <dt>Supervisor</dt>
+      <dd><%=item.supname%></dd>
+      <dt>Termination Date</dt>
+      <dd><%=item.termdate%></dd>
+      <dt>Hire Date</dt>
+      <dd><%=item.hiredate%></dd>
       <% } %>
     </dl>
     <div class="control">
@@ -24,7 +27,7 @@
         <label>Name: 
           <input name="item[rname]" value="<%=item.name%>" type="text" required>
         </label>
-        <label>User: 
+        <label>Assigned to: 
           <select name="item[user]" required>
             <% related_items.forEach(function(related_item) { %>
             <option value="<%=related_item._id%>"
@@ -34,7 +37,15 @@
             <% }); %>
           </select>
         </label>
-        
+        <label> Termination Date: 
+            <input name="item[termdate]" value="<%=item.termdate%>" type="datetime">
+        </label>
+        <label> Hire Date: 
+            <input name="item[hiredate]" value="<%=item.hiredate%>" type="datetime">
+        </label>
+        <label>Supervisor:
+          <input name="item[supname]" value="<%=item.supname%>" type="text"> 
+        </label>
         <button>Update</button>
       </form>
     </div>
