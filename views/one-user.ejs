@@ -40,6 +40,26 @@
           <input name="item[name]" type="text" required
                    placeholder="Ron Paul">
         </label>
+    <div class="control">
+      <h2>Add a new contact</h2>
+      <form id="create-contact" method="post" action="/contacts/">
+        <input type="hidden" name="item[user]" value="<%=item._id%>">
+        <!-- The line above links the contact to be created to this user. -->
+        <label>Respondent name: 
+          <input name="item[name]" type="text" required
+                   placeholder="Ron Paul">
+        </label>
+        <label>Contact Date:
+          <input name="item[contactdate] type="datetime" 
+                   placeholder="4/10/2013">
+        </label>
+        <label>Contact Result:
+          <input name="item[result] type="text" 
+                   placeholder="left voicemail message">
+        </label>
+        <button>Add</button>
+      </form>
+    </div>
         
         <button>Add</button>
       </form>
