@@ -8,7 +8,7 @@
     <a href="/"><h1>Survey Manager</h1></a>
     <dl>
       <dt>User name</dt>
-      <dd><%=item.uname%></dd>
+      <dd><%=item.name%></dd>
       <% if (item.description) { %>
       <dt>Description</dt>
       <dd><%=item.description%></dd>
@@ -21,13 +21,13 @@
           <% related_items.forEach(function(related_item) { %>
           <li>
             <a href="/respondents/<%=related_item._id%>">
-              <%=related_item.rname%>
+              <%=related_item.name%>
             </a>
           </li>
           <% }); %>
         </ul>
         <% } else { %>
-        No respondents have been added to this party.
+        No respondents have been added to this user.
         <% } %>
       </dd>
     </dl>
@@ -37,7 +37,7 @@
         <input type="hidden" name="item[user]" value="<%=item._id%>">
         <!-- The line above links the candidate to be created to this party. -->
         <label>Respondent name: 
-          <input name="item[rname]" type="text" required
+          <input name="item[name]" type="text" required
                    placeholder="Ron Paul">
         </label>
         <label>Candidate image URL:
