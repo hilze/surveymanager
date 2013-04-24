@@ -9,6 +9,8 @@
     <dl>
       <dt>Name</dt>
       <dd><%=item.name%></dd>
+      <dt>Phone</dt>
+      <dd><%=item.phone%></dd>
       <dt>Assigned to:</dt>
       <dd><a href="/users/<%=item.user%>"><%=item.user%></a></dd>
       <dt>Supervisor</dt>
@@ -39,6 +41,8 @@
             <% }); %>
           </select>
         </label>
+        <label> Telephone Number: 
+            <input name="item[phone]" value="<<%=item.phone%>" type="tel">
         <label> Termination Date: 
             <input name="item[termdate]" value="<%=item.termdate%>" type="datetime">
         </label>
