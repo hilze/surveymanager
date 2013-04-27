@@ -30,29 +30,7 @@ var db = utils.connectToDatabase(USER_OR_GROUP_NAME);
 // Example of handling PUT to create or update a resource. /////////////////////
 // Here we create or update an item using the ID specified in the URI. /////////
 ////////////////////////////////////////////////////////////////////////////////
-app.put('/users/:id',      // TODO: change to suit your URI design.
-  function(req, res) {
-  
-    // Get the item ID from the URI.
-    var item_id = req.params.id;
 
-    // Get the item info that was PUT from the input form.
-    // See the form in `views/list-users.ejs`.
-    var item = req.body.item;
-    
-    item.type = 'user'; // TODO: change to the type of item you want
-
-    // Save the new item to the database, specifying the ID.
-    db.save(item_id, item, function(err) {
-
-      // If there was a database error, return an error status.
-      if (err) { res.send(err, 500); } 
-      
-      // Otherwise, redirect back to the URI from which the form was submitted.
-      else { res.redirect('back' ); }
-    });
-  }
-);
 
 app.put('/contacts/:id',      // TODO: change to suit your URI design.
   function(req, res) {
@@ -127,6 +105,8 @@ app.get('/users/',         // TODO: change to suit your URI design.
   }
 );
 
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // Example of handling POST to create a resource. //////////////////////////////
 // Here we create an item and allow the ID to be created automatically. ////////
@@ -152,7 +132,6 @@ app.post('/respondents/', // TODO: change to suit your URI design.
   }
 );
 
-
 app.post('/contacts/', // TODO: change to suit your URI design.
   function(req, res) {
   
@@ -173,6 +152,7 @@ app.post('/contacts/', // TODO: change to suit your URI design.
     });
   }
 );
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // Another example of handling PUT to update a resource. ///////////////////////
@@ -202,6 +182,29 @@ app.put('/respondents/:id', // TODO: change to suit your URI design.
   }
 );
 
+app.put('/users/:id', // TODO: change to suit your URI design.
+  function(req, res) {
+  
+    // Get the item ID from the URI.
+    var item_id = req.params.id;
+
+    // Get the item info that was PUT from the input form.
+    // See the form in `views/one-respondent.ejs`.
+    var item = req.body.item;
+
+    item.type = 'user'; // TODO: change to the type of item you want
+
+    // Save the new item to the database, specifying the ID.
+    db.save(item_id, item, function(err) {
+
+      // If there was a database error, return an error status.
+      if (err) { res.send(err, 500); } 
+      
+      // Otherwise, redirect back to the URI from which the form was submitted.
+      else { res.redirect('back' ); }
+    });
+  }
+);
 app.put('/contacts/:id', // TODO: change to suit your URI design.
   function(req, res) {
   
