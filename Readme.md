@@ -1,7 +1,7 @@
 READ ME
 =========
 
-The exit interview service asses users (organizational staff members) in managing the assignment of staff to conduct surveys with employees (respondents) who have resigned or been terminated from the project. Users will be able to add respondents and track contacts made to respondents.
+The survey manager service assists users (organizational staff members) in managing the processing of conducting exit surveys with employees (respondents) who have resigned or been terminated from the project. Users will be able to add respondents and track contacts made to respondents.
 Resources that are part of the system include: 
 
 - Users - a list of users of the system
