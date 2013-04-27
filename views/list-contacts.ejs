@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Survey Manager: Contacts</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <a href="/"><h1>Survey Manager</h1></a>
+    <% if (items.length > 0) { %>
+    <ul>
+      <% items.forEach(function(item) { %>
+      <li><a href="/contacts/<%=item._id%>"><%=item.contactdate%></a>
+           by:<%=item.user%> <%=item.result%></li>
+      <% }); %>
+     </ul>
+     <% } else { %>
+     <div> No contacts have been added. </div>
+     <% } %>
+     
+     <div class="control">
+      <h2>Add a new contact</h2>
+      <form id="create-contact" method="post" action="/contacts/"
+        <label> User ID: 
+            <input name="item[user]" type="text" required>
+        <label>Contact Date: <br>
+          <input name="item[contactdate]" type="date" required>
+        </label>
+        <label>Contact Result: 
+          <input name="item[result]" type="text" required
+                 placeholder="left message">
+        </label>
+        <label>Contact to:
+          <input name="item[respondent]" type="text">
+        </label> 
+        <button>Add</button>
+      </form>
+     </div>
+  </body>
+</html>
