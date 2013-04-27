@@ -152,26 +152,7 @@ app.post('/respondents/', // TODO: change to suit your URI design.
   }
 );
 
-app.post('/contacts/', // TODO: change to suit your URI design.
-  function(req, res) {
-  
-    // Get the item info that was POSTed from the input form.
-    // See the form in `views/one-user.ejs`.
-    var item = req.body.item;
 
-    item.type = 'contact'; // TODO: change to the type of item you want
-
-    // Save the new item to the database. (No ID specified, it will be created.)
-    db.save(item, function(err) {
-
-      // If there was a database error, return an error status.
-      if (err) { res.send(err, 500); } 
-      
-      // Otherwise, redirect back to the URI from which the form was submitted.
-      else { res.redirect('back' ); }
-    });
-  }
-);
 app.post('/contacts/', // TODO: change to suit your URI design.
   function(req, res) {
   
