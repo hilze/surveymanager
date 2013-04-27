@@ -11,6 +11,10 @@
       <dd><%=item.name%></dd>
       <dt>User ID</dt>
       <dd><%=item.id%></dd>
+      <dt>User email</dt>
+      <dd><%=item.email%></dd>
+      <dt>Job Title</dt>
+      <dd><%=item.jobtitle%></dd>
       <dt>Respondents</dt>
       <dd>
         <% if (related_items.length > 0) { %>
@@ -30,35 +34,25 @@
     </dl>
     <div class="control">
       <h2>Add a new respondent</h2>
-      <form id="create-respondent" method="post" action="/respondents/">
-        <input type="hidden" name="item[user]" value="<%=item._id%>">
-        <!-- The line above links the candidate to be created to this party. -->
-        <label>Respondent name: 
+        <form id="create-respondent" method="post" action="/respondents/">
+          <input type="hidden" name="item[user]" value="<%=item._id%>">
+          <!-- The line above links the candidate to be created to this user. -->
+          <label>Respondent name: 
           <input name="item[name]" type="text" required
                    placeholder="Ron Paul">
-        </label>
-        <button>Add</button>
-      </form>
-    </div>
-    
-    <div class="control">
-      <h2>Add a new contact</h2>
-      <form id="create-contact" method="post" action="/contacts/">
-        <input type="hidden" name="item[user]" value="<%=item._id%>">
-        <!-- The line above links the contact to be created to this respondent. -->
-        <label>Respondent name: 
-          <input name="item[name]" type="text" required
-                   placeholder="Ron Paul">
-        </label>
-        <label>Contact Date:
-          <input name="item[contactdate] type="datetime" 
-                   placeholder="4/10/2013">
-        </label>
-        <label>Contact Result:
-          <input name="item[result] type="text" 
-                   placeholder="left voicemail message">
-        </label>
-        
+          </label>
+          <label> Telephone: 
+              <input name="item[phone]"  type="tel">
+           </label>
+          <label> Termination Date: 
+              <input name="item[termdate]"  type="date">
+           </label>
+          <label> Hire Date: 
+              <input name="item[hiredate]"  type="date">
+          </label>
+          <label>Supervisor:
+              <input name="item[supname]"  type="text"> 
+          </label>        
         <button>Add</button>
       </form>
     </div>
