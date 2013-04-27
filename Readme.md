@@ -1,68 +1,77 @@
-# An example web information service
+READ ME
+=========
 
-This is an example application intended to be used as a starting point for the final project in [INLS 490-186 Web Information Organization](http://aeshin.org/teaching/inls-490-186/2013/sp/).
+The exit interview service asses users (organizational staff members) in managing the assignment of staff to conduct surveys with employees (respondents) who have resigned or been terminated from the project. Users will be able to add respondents and track contacts made to respondents.
+Resources that are part of the system include: 
 
-## Forking this repository
+- Users - a list of users of the system
+- Respodents - a list of recently resigned staff who respond to survesy
+- Contacts -a list contacts made by users to respondents
 
-You will want to start by [forking](http://help.github.com/fork-a-repo/) this repository so you have your own copy to modify. If you decide to work in a group, I will put a copy of the code in your shared repository. (While it's possible to collaborate with your group by pushing and pulling commits across your two or three separate forks, doing so requires somewhat advanced knowledge of Git and thus isn't expected for this assignment.)
+id attribute values:
+-
+- *users* - Applied to a div tag. A list of users
+- *UID* - Applied to a FORM tag. A form for creating a user
+- *respondents* -   Applied to a div tag. A a list of respondents
+- *RID* - Applied to a FORM tag. A form for creating a respondent
+- *contacts* -  Applied to a div tag. A list of contacts
+- *contactID* - Applied to a FORM tag. A form used to add contacts
 
-If you're working alone, please **rename your GitHub repository** to something more suitable for your service. You can do this by clicking on the `Settings` button in the top right of your repository's page on GitHub. A one-word, no-spaces name is best. (If you're working in a group the repository will be named after your group).
+class attribute values:
+-
+- *user* - Applied to a LI tag. Represents a single user
+- *respondent* - Applied to a LI tag. Represents a single respondent
+- *contact* - Applied to a LI tag. A survey of a single respondent
+- *create-user* -Applied to a FORM tag to add a new user.
+ 	- INPUT [text]=Uname
+    - INPUT [text]=UID
+    - INPUT [text]=email
+    - INPUT [text]=jobtitle
+- *update-user* - Applied to a FORM tag. An update to user. Should contain these elements:
+    - INPUT [text]=Uname
+    - INPUT [text]=UID
+    - INPUT [text]=email
+    - INPUT [text]=jobtitle
+- *create-respondent* - Applied to a FORM tag. Adding a respondent should include these elements:
+    - INPUT [text]=Rname
+    - INPUT [text]=RID
+    - INPUT [text]=Rphone
+    - INPUT [text]=supervisor
+- *update-respondent* - Applied to a FORM tag. An update to respondent should include these elements:
+    - INPUT [text]=Rname
+    - INPUT [text]=RID
+    - INPUT [text]=Rphone
+    - INPUT [text]=supervisor
+- *create-contact* - Applied to a FORM tag. An update to respondent should include these elements:
+    - INPUT [text]=contactdate
+    - INPUT [text]=result
+    - INPUT [text]=respondent
+   
+- *contactdate* - Applied to a SPAN tag. Contains the date-time a contact was made.       
+- *respondentSearch* - Applied to a FORM tag. A link template to search all respondents.              
+                                                                                                 - 
 
-## Cloning your project in Cloud9
+name attribute values:
+-
+- *name* - Applied to an INPUT [text] element. The full name of a user or respondent.
+- *email* - Applied to an INPUT [email] element. The email address of a user.
+- *jobtitle* - Applied to an INPUT [text] element. The Job Title of a user.
+- *Rname* - Applied to an INPUT [text] element. The full name of a respondent.
+- *RID* - Applied to an INPUT [text] element. The employee ID of a respondent. 
+- *Phone* - Applied to an INPUT [tel] element. The phone # of a respondent.
+- *hiredatetime* - Applied to an INPUT [date] element. The date respondent was hired
+- *termdatetime* - Applied to an INPUT [date] element. The date a respondent resigned.
+- *Supervisor* - Applied to an INPUT [text] element. The Supervisor of a respondent.
 
-If you're working alone, and you've successfully forked the repository to your own GitHub account, then cloning your project into Cloud9 is simple. Just sign in to [Cloud9](http://c9.io) using your GitHub account (click the little green [Octocat](http://octodex.github.com/) icon). Your dashboard should open, and you will see a list of `PROJECTS ON GITHUB` on the left. Select your project and click the green `CLONE TO EDIT` button.
+rel attribute values:
+-
+- *index* - Applied to A tag. A reference to starting URI for application
+- *user* -  Applied to A tag. A reference to a user representation
+- *userAdd* - Applied to A tag. A reference to userAdd FORM.
+- *userUpdate* -  Applied to A tag. A reference to userUpdate FORM.
+- *respondent* -  Applied to A tag. A reference to a respondent representation
+- *respondentUpdate* - Applied to A tag. A reference to respondentUpdate FORM.
+- *contact* - Applied to A tag. A reference to a contact representation
+- *respondentSearch* - Applied to A tag. A reference to respondentSearch FORM.              
 
-If you're in a group, your GitHub repository won't show up in the list of GitHub projects, so you need to click the plus-sign button next to `MY PROJECTS` on the left, and select `Clone From URL`. Then (in another browser tab) go to the homepage of your team's repository, and copy the URL next to where it says `Read+Write access` (it should look something like `git@github.com:sils-webinfo/SteampunkUnicorn.git` if `SteampunkUnicorn` were the name of your group). Go back to Cloud9, paste this URL in the `Source URL` field, and click the green `CHECKOUT` button. Cloud9 should start cloning your project. (Sometimes it flakes out; if it does just try again.)
-
-## Modifying the example code
-
-There are only three places where the example service needs to be modified to implement your own service:
-
-1. [`app.js`](https://github.com/sils-webinfo/election/blob/master/app.js) contains all the logic for handling HTTP requests. You may just need to modify the examples in this file, or you may need to add additional request handlers by copying, pasting, and modifying these examples. The only parts you should *need* to change are marked with with `TODO` comments. In particular, make sure you edit the value of the `USER_OR_GROUP_NAME` variable at the top of this file to match your GitHub user name (if you're working alone) or your group name:
-
-    ```javascript
-    var USER_OR_GROUP_NAME = ''; // TODO: Insert GitHub username or group name.
-    ```
-
-1. The [`views`](https://github.com/sils-webinfo/election/tree/master/views) directory contains all the EJS ([Embedded JavaScript](http://embeddedjs.com/)) templates for the service. You will need to create new templates suitable for your application, using these examples as models. The templates should include the metadata describing your application flow and data.
-
-1. Finally, you need to edit [`package.json`](https://github.com/sils-webinfo/election/blob/master/package.json) and change the value of the `name` property to whatever you named your project.
-
-## Testing your code
-
-To run your project, simply open `app.js` and click the `Run` button at the top of the screen (it looks like a green play button). You should see a message like this in the console:
-
-```
-Running Node Process
-Your code is running at 'http://election.rybesh.c9.io'.
-Important: use 'process.env.PORT' as the port and 'process.env.IP' as the host in your scripts!
-```
-
-Clicking on the URL (in my case, `http://election.rybesh.c9.io` since `rybesh` is my GitHub/Cloud9 username) should open a new browser tab or window to your web app.
-
-If you get an error message, it's probably because you forgot to set `USER_OR_GROUP_NAME` (see above) or due to a syntax error somewhere in `app.js` (look for red `X`s along the left margin of the editor when you open `app.js`). 
-
-## Troubleshooting
-
-Running your app in Cloud9 and looking at the console output should help you troubleshoot basic problems. You can add logging messages to `app.js` like this:
-
-```javascript
-console.log("Calculating grobble vectors…");
-```
-
-Then you when you run your app in Cloud9, you should see the text `Calculating grobble vectors…` in your console when that code is executed. Adding lots of console logging messages like this can help you understand when various parts of the program are running. You can also print out variables to see what their values are:
-
-```javascript
-// Get the item ID from the URI.
-var item_id = req.params.id;
-console.log("the item id is: ", item_id);
-```
-
-You may also want to verify that data is being created and updated in your database correctly. You can do this by going to [the admin tools for our shared database server](http://sils-webinfo.iriscouch.com/_utils/). Find your database in the list (it is named whatever you set `USER_OR_GROUP_NAME` to in `app.js`), and click it. You should see a list of all the "documents" (objects) in your database. Clicking on a document ID will show its details (properties and values).
-
-## Deploying to Heroku
-
-When you've got your app running how you want it, and you're ready to turn things in, it's time to deploy to [Heroku](http://www.heroku.com/). Heroku is a free (for us) cloud hosting platform. It will enable your app to run longer than it can in the Cloud9 debugger.
-
-First, [sign up](https://api.heroku.com/signup) for Heroku. Then, follow [these instructions](https://docs.c9.io/deploying_to_heroku.html) to deploy your app. Don't worry about the `package.json` and `Procfile` files: those already exist, and you shouldn't have to change them except to change the project name in `package.json` (see above).
-
+    
