@@ -5,7 +5,7 @@ The survey manager service assists users (organizational staff members) in manag
 Resources that are part of the system include: 
 
 - Users - a list of users of the system
-- Respodents - a list of recently resigned staff who respond to survesy
+- Respondents - a list of recently resigned staff who respond to survesy
 - Contacts -a list contacts made by users to respondents
 
 id attribute values:
