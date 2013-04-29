@@ -17,7 +17,7 @@
      <div> No contacts have been added. </div>
      <% } %>
      
-     <div class="control">
+     <div class="control" itemscope itemtype="http://schema.org/Person">
       <h2>Add a new contact</h2>
       <form id="create-contact" method="post" action="/contacts/"
         <label> User ID: 
@@ -30,7 +30,7 @@
                  placeholder="left message">
         </label>
         <label>Contact to:
-          <input name="item[respondent]" type="text">
+          <input itemprop="name" name="item[respondent]" type="text">
         </label> 
         <button>Add</button>
       </form>

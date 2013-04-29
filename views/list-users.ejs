@@ -7,15 +7,16 @@
   <body>
     <a href="/"><h1>Survey Manager</h1></a>
     <% if (items.length > 0) { %>
+    <div itemscope itemtype="http://schema.org/Person">
     <ul>
       <% items.forEach(function(item) { %>
-      <li><a href="/users/<%=item._id%>"><%=item.name%></a></li>
+      <li>itemscope itemtype="http://schema.org/Person"<a itemprop="url" href="/users/<%=item._id%>"<%=item.name%></a></li>
       <% }); %>
     </ul>
     <% } else { %>
     <div>No users have been added.</div>
     <% } %>
-    <div class="control">
+    <div itemscope itemtype="http://schema.org/Person" class="control">
       <h2>Add or update a new user</h2>
       <script>
       function onFormSubmit(form) {
@@ -26,25 +27,22 @@
       </script>
       <form method="post" action="/users/"
             onsubmit="return onFormSubmit(this);">
-        <!-- The line above dynamically sets the PUT destination when the -->
-        <!-- form is submitted. -------------------------------------------->
         <input type="hidden" name="_method" value="put">
-        <!-- The line above tells the server to treat this as a PUT request. -->
         <label>User ID<br>
           (employee id number, no spaces):
           <input name="item[id]" type="text"  required
                  placeholder="000999">
         </label>
         <label>User name: 
-          <input name="item[name]" type="text" required
+          <input itemprop="name" name="item[name]" type="text" required
                  placeholder="John Doe">
         </label>
         <label> Email: 
-          <input name="item[email]" type="email"
+          <input itemprop="email" name="item[email]" type="email"
                       placeholder="jdoe@yahoo.com">
         </label>
         <label>Job Title:
-          <input name="item[jobtitle]" type="text"
+          <input itemprop="jobTitle" name="item[jobtitle]" type="text"
                     placeholder="Project Manager">
         </label>  
         <button>Add or update</button>

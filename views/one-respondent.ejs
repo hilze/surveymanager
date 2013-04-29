@@ -6,28 +6,29 @@
   </head>
   <body>
     <a href="/"><h1>Survey Manager</h1></a>
+    <div itemscope itemtype="http://schema.org/Person">
     <dl>
       <dt>Name</dt>
-      <dd><%=item.name%></dd>
+      <dd itemprop="name" <%=item.name%></dd>
       <dt>Phone</dt>
-      <dd><%=item.phone%></dd>
+      <dd itemprop="telephone" <%=item.phone%></dd>
       <dt>Assigned to:</dt>
-      <dd><a href="/users/<%=item.user%>"><%=item.user%></a></dd>
+      <dd><a itemprop="url" href="/users/<%=item.user%>"><%=item.user%></a></dd>
       <dt>Supervisor</dt>
-      <dd><%=item.supname%></dd>
+      <dd itemprop="name" <%=item.supname%></dd>
       <dt>Termination Date</dt>
       <dd><%=item.termdate%></dd>
       <dt>Hire Date</dt>
       <dd><%=item.hiredate%></dd>
     </dl>
-
-    <div class="control">
+	</div>
+    <div class="control" itemsope itemtype="http://schema.org/Person>
       <h2>Update respondent</h2>
       <form method="post" action="/respondents/<%=item._id%>">
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
         <label>Name: 
-          <input name="item[name]" value="<%=item.name%>" type="text" required>
+          <input itemprop="name" name="item[name]" value="<%=item.name%>" type="text" required>
         </label>
         <label>Assigned to: 
           <select name="item[user]" required>
@@ -40,7 +41,7 @@
           </select>
         </label>
         <label> Telephone Number: 
-            <input name="item[phone]" value="<<%=item.phone%>" type="tel">
+            <input itemprop="telephone "name="item[phone]" value="<<%=item.phone%>" type="tel">
         <label> Termination Date: 
             <input name="item[termdate]" value="<%=item.termdate%>" type="datetime">
         </label>
@@ -48,7 +49,7 @@
             <input name="item[hiredate]" value="<%=item.hiredate%>" type="datetime">
         </label>
         <label>Supervisor:
-          <input name="item[supname]" value="<%=item.supname%>" type="text"> 
+          <input itemprop="name" name="item[supname]" value="<%=item.supname%>" type="text"> 
         </label>
         <button>Update</button>
       </form>
