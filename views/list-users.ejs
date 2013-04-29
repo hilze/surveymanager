@@ -10,7 +10,7 @@
     <div itemscope itemtype="http://schema.org/Person">
     <ul>
       <% items.forEach(function(item) { %>
-      <li>itemscope itemtype="http://schema.org/Person"<a itemprop="url" href="/users/<%=item._id%>"<%=item.name%></a></li>
+      <li>itemscope itemtype="http://schema.org/Person"<a itemprop="url" href="/users/<%=item._id%>"><%=item.name%></a></li>
       <% }); %>
     </ul>
     <% } else { %>
