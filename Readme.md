@@ -67,11 +67,10 @@ rel attribute values:
 -
 - *index* - Applied to A tag. A reference to starting URI for application
 - *user* -  Applied to A tag. A reference to a user representation
-- *userAdd* - Applied to A tag. A reference to userAdd FORM.
-- *userUpdate* -  Applied to A tag. A reference to userUpdate FORM.
+- *create-user* - Applied to A tag. A reference to create-user FORM.
 - *respondent* -  Applied to A tag. A reference to a respondent representation
-- *respondentUpdate* - Applied to A tag. A reference to respondentUpdate FORM.
+- *create-respondent* - Applied to A tag. A reference to create-respondent FORM.
 - *contact* - Applied to A tag. A reference to a contact representation
-- *respondentSearch* - Applied to A tag. A reference to respondentSearch FORM.              
+- *create-contact* - Applied to A tag. A reference to create-contact FORM.              
 
     
