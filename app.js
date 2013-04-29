@@ -32,7 +32,7 @@ var db = utils.connectToDatabase(USER_OR_GROUP_NAME);
 ////////////////////////////////////////////////////////////////////////////////
 
 
-app.put('/contacts/:id',      // TODO: change to suit your URI design.
+app.put('/users/:id',      // TODO: change to suit your URI design.
   function(req, res) {
   
     // Get the item ID from the URI.
@@ -42,7 +42,7 @@ app.put('/contacts/:id',      // TODO: change to suit your URI design.
     // See the form in `views/list-contacts.ejs`.
     var item = req.body.item;
     
-    item.type = 'contact'; // TODO: change to the type of item you want
+    item.type = 'user'; // TODO: change to the type of item you want
 
     // Save the new item to the database, specifying the ID.
     db.save(item_id, item, function(err) {
