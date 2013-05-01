@@ -9,20 +9,20 @@
     <div itemscope itemtype="http://schema.org/Person">
     <dl>
       <dt>Name</dt>
-      <dd itemprop="name" <%=item.name%></dd>
+      <dd itemprop="name"><%=item.name%></dd>
       <dt>Phone</dt>
-      <dd itemprop="telephone" <%=item.phone%></dd>
+      <dd itemprop="telephone"> <%=item.phone%></dd>
       <dt>Assigned to:</dt>
       <dd><a itemprop="url" href="/users/<%=item.user%>"><%=item.user%></a></dd>
       <dt>Supervisor</dt>
-      <dd itemprop="name" <%=item.supname%></dd>
+      <dd itemprop="name"><%=item.supname%></dd>
       <dt>Termination Date</dt>
       <dd><%=item.termdate%></dd>
       <dt>Hire Date</dt>
       <dd><%=item.hiredate%></dd>
     </dl>
 	</div>
-    <div class="control" itemsope itemtype="http://schema.org/Person>
+    <div class="control" itemscope itemtype="http://schema.org/Person>
       <h2>Update respondent</h2>
       <form method="post" action="/respondents/<%=item._id%>">
         <input type="hidden" name="_method" value="put">
