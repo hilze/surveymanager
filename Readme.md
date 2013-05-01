@@ -22,21 +22,16 @@ class attribute values:
 - *user* - Applied to a LI tag. Represents a single user
 - *respondent* - Applied to a LI tag. Represents a single respondent
 - *contact* - Applied to a LI tag. A survey of a single respondent
-- *create-user* -Applied to a FORM tag to add a new user.
- 	- INPUT [text]=Uname
-    - INPUT [text]=UID
-    - INPUT [text]=email
-    - INPUT [text]=jobtitle
-- *update-user* - Applied to a FORM tag. An update to user. Should contain these elements:
-    - INPUT [text]=Uname
-    - INPUT [text]=UID
+- *create-user* -Applied to a FORM tag to add or update a new user.
+ 	- INPUT [text]=name user's name
+    - INPUT [text]=ID user's employee id
     - INPUT [text]=email
     - INPUT [text]=jobtitle
 - *create-respondent* - Applied to a FORM tag. Adding a respondent should include these elements:
-    - INPUT [text]=Rname
-    - INPUT [text]=RID
-    - INPUT [text]=Rphone
-    - INPUT [text]=supervisor
+    - INPUT [text]=name to indicate the respondent's name
+    - INPUT [text]=ID created automatically 
+    - INPUT [text]=phone respondent's telephone number
+    - INPUT [text]=supname respondent's supervisor name
 - *update-respondent* - Applied to a FORM tag. An update to respondent should include these elements:
     - INPUT [text]=Rname
     - INPUT [text]=RID
@@ -56,8 +51,7 @@ name attribute values:
 - *name* - Applied to an INPUT [text] element. The full name of a user or respondent.
 - *email* - Applied to an INPUT [email] element. The email address of a user.
 - *jobtitle* - Applied to an INPUT [text] element. The Job Title of a user.
-- *Rname* - Applied to an INPUT [text] element. The full name of a respondent.
-- *RID* - Applied to an INPUT [text] element. The employee ID of a respondent. 
+- *ID* - Applied to an INPUT [text] element. The id of a user or a repondent.
 - *Phone* - Applied to an INPUT [tel] element. The phone # of a respondent.
 - *hiredatetime* - Applied to an INPUT [date] element. The date respondent was hired
 - *termdatetime* - Applied to an INPUT [date] element. The date a respondent resigned.
