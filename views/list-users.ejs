@@ -7,14 +7,15 @@
   <body>
     <a href="/"><h1>Survey Manager</h1></a>
     <% if (items.length > 0) { %>
-    <ul>
+    <div itemscope itemtype="http://schema.org">
       <% items.forEach(function(item) { %>
-      <li>itemscope itemtype="http://schema.org/Person"<a itemprop="url" href="/users/<%=item._id%>"><%=item.name%></a></li>
+      <li><a itemprop="url" href="/users/<%=item._id%>"><%=item.name%></a></li>
       <% }); %>
-    </ul>
-    <% } else { %>
-    <div>No users have been added.</div>
-    <% } %>
+    	</ul>
+    	<% } else { %>
+   		 <div>No users have been added.</div>
+    	<% } %>
+    </div>
     <div itemscope itemtype="http://schema.org/Person" class="control">
       <h2>Add or update a new user</h2>
       <script>
