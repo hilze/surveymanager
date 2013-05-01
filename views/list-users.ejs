@@ -8,12 +8,10 @@
     <a href="/"><h1>Survey Manager</h1></a>
     <% if (items.length > 0) { %>
       <% items.forEach(function(item) { %>
-      <div itemscope itemtype="http://schema.org/Person">
       	<ul>
-      		<li><a itemprop="url" href="/users/<%=item._id%>"><%=item.name%></a></li>
+      		<li><a href="/users/<%=item._id%>"><%=item.name%></a></li>
       		<% }); %>	
    		 </ul>
-   		</div>
     	<% } else { %>
    		 <div>No users have been added.</div>
     	<% } %>
