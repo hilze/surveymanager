@@ -21,13 +21,13 @@
       <dd><%=item.hiredate%></dd>
     </dl>
 	
-    <div class="control" itemscope itemtype="http://schema.org/Person>
+    <div class="control">
       <h2>Update respondent</h2>
       <form method="post" action="/respondents/<%=item._id%>">
         <input type="hidden" name="_method" value="put">
         <!-- The line above tells the server to treat this as a PUT request. -->
         <label>Name: 
-          <input itemprop="name" name="item[name]" value="<%=item.name%>" type="text" required>
+          <input itemscope itemtype="http://schema.org/Person itemprop="name" name="item[name]" value="<%=item.name%>" type="text" required>
         </label>
         <label>Assigned to: 
           <select name="item[user]" required>
@@ -40,7 +40,7 @@
           </select>
         </label>
         <label> Telephone Number: 
-            <input itemprop="telephone "name="item[phone]" value="<%=item.phone%>" type="tel">
+            <input itemscope itemtype="http://schema.org/Person itemprop="telephone "name="item[phone]" value="<%=item.phone%>" type="tel">
         <label> Termination Date: 
             <input name="item[termdate]" value="<%=item.termdate%>" type="date">
         </label>
@@ -48,7 +48,7 @@
             <input name="item[hiredate]" value="<%=item.hiredate%>" type="date">
         </label>
         <label>Supervisor:
-          <input itemprop="name" name="item[supname]" value="<%=item.supname%>" type="text"> 
+          <input itemscope itemtype="http://schema.org/Person itemprop="name" name="item[supname]" value="<%=item.supname%>" type="text"> 
         </label>
         <button>Update</button>
       </form>
