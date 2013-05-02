@@ -1,7 +1,7 @@
 READ ME
 =========
 
-The survey manager service assists users (organizational staff members) in managing the process of conducting exit surveys with employees (respondents) who have resigned or been terminated from the project. Users will be able to add respondents and track contacts made to respondents.
+The survey manager service assists users (organizational staff members) in managing the process of conducting exit surveys with employees (respondents) who have resigned or been terminated from the project. Users will be able to view the list of respondents, add and update respondents. They will also be able to add contacts made to respondents and view a list of all contacts.
 Resources that are part of the system include: 
 
 - Users - a list of users of the system
@@ -11,7 +11,7 @@ Resources that are part of the system include:
 id attribute values:
 -
 - *users* - Applied to a div tag. A list of users
-- *UID* - Applied to a FORM tag. A form for creating a user
+- *ID* - Applied to a FORM tag. A form for creating a user. The ID is an input of employee on form.
 - *respondents* -   Applied to a div tag. A a list of respondents
 - *RID* - Applied to a FORM tag. A form for creating a respondent
 - *contacts* -  Applied to a div tag. A list of contacts
@@ -41,8 +41,7 @@ class attribute values:
     - INPUT [text]=contactdate
     - INPUT [text]=result
     - INPUT [text]=respondent
-   
-- *contactdate* - Applied to a SPAN tag. Contains the date-time a contact was made.       
+         
 - *respondentSearch* - Applied to a FORM tag. A link template to search all respondents.              
                                                                                                  - 
 
