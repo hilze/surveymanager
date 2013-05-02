@@ -40,7 +40,7 @@
           </select>
         </label>
         <label> Telephone Number: 
-            <input itemscope itemtype="http://schema.org/Person itemprop="telephone" "name="item[phone]" value="<%=item.phone%>" type="tel">
+            <input itemscope itemtype="http://schema.org/Person" itemprop="telephone" "name="item[phone]" value="<%=item.phone%>" type="tel">
         <label> Termination Date: 
             <input name="item[termdate]" value="<%=item.termdate%>" type="date">
         </label>
@@ -48,7 +48,7 @@
             <input name="item[hiredate]" value="<%=item.hiredate%>" type="date">
         </label>
         <label>Supervisor:
-          <input itemscope itemtype="http://schema.org/Person itemprop="name" name="item[supname]" value="<%=item.supname%>" type="text"> 
+          <input itemscope itemtype="http://schema.org/Person" itemprop="name" name="item[supname]" value="<%=item.supname%>" type="text"> 
         </label>
         <button>Update</button>
       </form>
