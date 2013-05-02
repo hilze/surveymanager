@@ -6,16 +6,16 @@
   </head>
   <body>
     <a href="/"><h1>Survey Manager</h1></a>
-    <div itemscope itemtype="http://schema.org/Person">
+    
     <dl>
       <dt>User name</dt>
-      <dd itemprop="name" <%=item.name%></dd>
+      <dd itemscope itemtype="http://schema.org/Person" itemprop="name" <%=item.name%></dd>
       <dt>User ID</dt>
       <dd><%=item.id%></dd>
       <dt>User email</dt>
-      <dd itemprop="email" <%=item.email%></dd>
+      <dd itemscope itemtype="http://schema.org/Person" itemprop="email" <%=item.email%></dd>
       <dt>Job Title</dt>
-      <dd itemprop="jobTitle" <%=item.jobtitle%></dd>
+      <dd itemscope itemtype="http://schema.org/Person" itemprop="jobTitle" <%=item.jobtitle%></dd>
       <dt>Respondents</dt>
       <dd>
         <% if (related_items.length > 0) { %>
@@ -34,17 +34,17 @@
       </dd>
     </dl>
     </div>
-    <div class="control" itemscope itemtype="http://schema.org/Person">
+    <div class="control">
       <h2>Add a new respondent</h2>
         <form id="create-respondent" method="post" action="/respondents/">
           <input type="hidden" name="item[user]" value="<%=item._id%>">
           <!-- The line above links the candidate to be created to this user. -->
           <label>Respondent name: 
-          <input itemprop="name" name="item[name]" type="text" required
+          <input itemscope itemtype="http://schema.org/Person" itemprop="name" name="item[name]" type="text" required
                    placeholder="Ron Paul">
           </label>
           <label> Telephone: 
-              <input itemprop="telephone" name="item[phone]"  type="tel">
+              <input itemscope itemtype="http://schema.org/Person" itemprop="telephone" name="item[phone]"  type="tel">
            </label>
           <label> Termination Date: 
               <input name="item[termdate]"  type="date">
@@ -53,7 +53,7 @@
               <input name="item[hiredate]"  type="date">
           </label>
           <label>Supervisor:
-              <input itemprop="name" name="item[supname]"  type="text"> 
+              <input itemscope itemtype="http://schema.org/Person" itemprop="name" name="item[supname]"  type="text"> 
           </label>        
         <button>Add</button>
       </form>
