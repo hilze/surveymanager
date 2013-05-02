@@ -22,7 +22,7 @@
         <ul>
           <% related_items.forEach(function(related_item) { %>
           <li>
-            <a itemprop="url" href="/respondents/<%=related_item._id%>">
+            <a itemscope itemtype="http://schema.org/Person" itemprop="url" href="/respondents/<%=related_item._id%>">
               <%=related_item.name%>
             </a>
           </li>
