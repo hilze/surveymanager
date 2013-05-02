@@ -9,13 +9,13 @@
     
     <dl>
       <dt>User name</dt>
-      <dd itemscope itemtype="http://schema.org/Person" itemprop="name" <%=item.name%></dd>
+      <dd itemscope itemtype="http://schema.org/Person" itemprop="name"> <%=item.name%></dd>
       <dt>User ID</dt>
       <dd><%=item.id%></dd>
       <dt>User email</dt>
-      <dd itemscope itemtype="http://schema.org/Person" itemprop="email" <%=item.email%></dd>
+      <dd itemscope itemtype="http://schema.org/Person" itemprop="email"><%=item.email%></dd>
       <dt>Job Title</dt>
-      <dd itemscope itemtype="http://schema.org/Person" itemprop="jobTitle" <%=item.jobtitle%></dd>
+      <dd itemscope itemtype="http://schema.org/Person" itemprop="jobTitle"> <%=item.jobtitle%></dd>
       <dt>Respondents</dt>
       <dd>
         <% if (related_items.length > 0) { %>
